@@ -1,23 +1,34 @@
+from abc import abstractmethod
+import math
 
-text_first = input('Введите первое число: ')
-number_first = int(text_first)
-operation = input('Введите операцию: ')
-text_second = input('Введите второе число: ')
-number_second = int(text_second)
-if operation == '*':
-    result = number_first * number_second
-    print(result)
-elif operation == '+':
-    result = number_first + number_second
-    print(result)
-elif operation == '-':
-    result = number_first - number_second
-    print(result)
-elif operation == '/':
-    if number_second == 0:
-        print('Ошибка. Деление на нуль')
-    else:
-        result = number_first / number_second
-        print(result)
+class Car:
+    __brand = 'Toyota'
+    __model = 'Yaris'
+    __year = 2015
+    __speed = 0
 
-# print("Ответ:", test_number)
+    def engine(self):
+        print('Двигатель заведен')
+
+    def speed_up(self):
+        Car.speed = 0
+        up = Car.speed
+        up = up + 5
+        return f'Нажали на газ, скорость {up}'
+
+    def speed_down(self):
+        Car.speed = 0
+        down = Car.speed
+        down = down - 5
+        return  f'Нажали на газ, скорость {down}'
+
+    def reverse(self):
+        Car.speed = 0
+        speed_reverse = Car.speed * -1
+        return f'Нажали на разворот, скорость {speed_reverse}'
+
+
+car_a = Car()
+print(car_a.speed_up())
+print(car_a.speed_down())
+print(car_a.reverse())
